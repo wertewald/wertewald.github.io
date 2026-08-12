@@ -18,7 +18,344 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
+/* =========================================
+   WERTEWALD – MOBILE FEINSCHLIFF VERSION A
+   ========================================= */
 
+:root {
+  --gruen: #244c31;
+  --beige: #f2ecdf;
+  --beige-hell: #f6f1e7;
+  --linie: #d7cfbf;
+}
+
+/* EINHEITLICHE SCHRIFT UND FARBE */
+
+body {
+  background: var(--beige);
+  color: var(--gruen);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.58;
+}
+
+p,
+div,
+span,
+a,
+figcaption,
+.status,
+.zielgruppe,
+.pilot-status-block h3 {
+  color: var(--gruen);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--gruen);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+}
+
+/* EINHEITLICHER ABSATZRHYTHMUS */
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* HERO / LOGO */
+
+.hero {
+  background: var(--beige);
+  padding-top: 62px;
+  padding-bottom: 64px;
+}
+
+.hero-logo {
+  width: 145px;
+  margin: 0 auto 22px auto;
+}
+
+.hero-titelblock {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.05;
+}
+
+.untertitel {
+  margin-top: 8px;
+  font-size: 19px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.leitgedanke {
+  margin-top: 38px;
+  margin-bottom: 0;
+  font-size: 27px;
+  line-height: 1.25;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* MAGAZIN-ZITATE:
+   ALLE IDENTISCH */
+
+.magazin-zitat {
+  margin-top: 34px;
+  margin-bottom: 34px;
+  padding: 4px 0 4px 18px;
+
+  border-left: 1px solid var(--gruen);
+
+  color: var(--gruen);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+/* EINSTIEGSFRAGEN:
+   NICHT KURSIV, ALLE GLEICH */
+
+.hero-fragen {
+  margin-top: 32px;
+  margin-bottom: 26px;
+}
+
+.hero-fragen p {
+  color: var(--gruen);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* HAUPTÜBERSCHRIFTEN */
+
+h2 {
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 27px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/* WERTEWALD KREIS */
+
+.kreis-bereich {
+  background: var(--beige-hell);
+}
+
+.kreis-folge {
+  margin-top: 24px;
+  margin-bottom: 30px;
+  font-size: 19px;
+  line-height: 1.65;
+  font-weight: 600;
+}
+
+.kreis-folge div {
+  margin-bottom: 7px;
+}
+
+.kreis-grafik {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kreis-zitat {
+  margin-top: 30px;
+}
+
+/* SÄULEN */
+
+.saeule {
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+.saeule-nummer {
+  color: var(--gruen);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.saeule h3 {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+/* BILDUNGSFORMAT-KARTEN:
+   STRUKTUR BEIBEHALTEN */
+
+.bildungsformate {
+  background: var(--beige-hell);
+}
+
+.format {
+  background: #f8f4eb;
+  border-color: var(--linie);
+}
+
+.format h3 {
+  color: var(--gruen);
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.zielgruppe {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.status {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: var(--gruen);
+}
+
+/* PILOTBILDER */
+
+.wasser-detailbild {
+  text-align: center;
+}
+
+.wasser-detailbild img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: var(--gruen);
+}
+
+/* UNTERES LOGO:
+   GRÖSSE BEHALTEN, NUR ZENTRIEREN */
+
+.kontakt-grid {
+  text-align: center;
+}
+
+.kontakt-logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kontakt-grid .textbreite {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* MOBIL */
+
+@media (max-width: 620px) {
+
+  body {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 54px;
+  }
+
+  .hero-logo {
+    width: 135px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .untertitel {
+    font-size: 18px;
+  }
+
+  .leitgedanke {
+    margin-top: 36px;
+    font-size: 25px;
+  }
+
+  .hero-fragen p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: 33px;
+    margin-bottom: 22px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .magazin-zitat {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .kreis-folge {
+    font-size: 18px;
+  }
+
+  .saeule h3 {
+    font-size: 25px;
+  }
+
+  .format {
+    padding: 23px 20px;
+  }
+
+  .format h3 {
+    font-size: 27px;
+  }
+
+  .pilot-text h3 {
+    font-size: 27px;
+  }
+
+  .wasser-detailbild img {
+    width: 74%;
+  }
+}
   <style>
     :root {
       --waldgruen: #183d25;
