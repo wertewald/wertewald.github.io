@@ -4,107 +4,587 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>WerteWald – Projektpräsenz 2026</title>
+  <title>WerteWald – Institut für Mitgefühl & Umweltbewusstsein</title>
+
+  <meta
+    name="description"
+    content="WerteWald – Institut für Mitgefühl & Umweltbewusstsein. Projektpräsenz 2026 in der Entwicklungs- und Pilotphase."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+    :root {
+      --waldgruen: #183d25;
+      --waldgruen-hell: #315a38;
+      --text: #293229;
+      --text-hell: #667066;
+      --creme: #f8f6ef;
+      --creme-hell: #fcfbf7;
+      --salbei: #eef1e8;
+      --warm: #f5eedb;
+      --linie: #dedfd8;
+      --gelb: #e7c85c;
+      --weiss: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f8f4;
-      color: #243126;
-      line-height: 1.7;
+      background: var(--creme-hell);
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 16px;
     }
 
-    header {
-      background: #183d25;
-      color: white;
-      padding: 70px 24px;
-      text-align: center;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.6rem;
+    a {
+      color: inherit;
     }
 
-    header h2 {
-      margin: 12px 0 0;
-      font-size: 1.2rem;
-      font-weight: normal;
+    strong {
+      font-weight: 600;
     }
 
-    .status {
-      margin-top: 28px;
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 20px;
-      font-size: 0.9rem;
+    .seite {
+      overflow: hidden;
     }
 
-    main {
-      max-width: 850px;
-      margin: auto;
-      padding: 50px 24px 80px;
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
     }
+
+    .textbreite {
+      max-width: 720px;
+    }
+
+    /* -------------------------
+       Navigation
+    ------------------------- */
+
+    .navigation {
+      background: rgba(252, 251, 247, 0.96);
+      border-bottom: 1px solid var(--linie);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+    }
+
+    .navigation-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .nav-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--waldgruen);
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 0.83rem;
+      color: var(--waldgruen);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* -------------------------
+       Allgemein
+    ------------------------- */
 
     section {
-      margin-bottom: 60px;
+      padding: 95px 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--linie);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: var(--waldgruen);
+      font-weight: 600;
+      line-height: 1.12;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.4rem);
     }
 
     h2 {
-      color: #183d25;
-      font-size: 1.8rem;
+      margin: 0 0 35px;
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+    }
+
+    p {
+      margin: 0 0 1.35rem;
+    }
+
+    .magazin-zitat {
+      max-width: 790px;
+      margin: 55px 0;
+      padding: 6px 0 6px 28px;
+      border-left: 1px solid var(--waldgruen-hell);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: #596554;
+    }
+
+    .magazin-zitat strong {
+      font-style: italic;
+    }
+
+    .intro {
+      font-size: 1.08rem;
+    }
+
+    .abschnitt-einleitung {
+      max-width: 760px;
+      margin-bottom: 45px;
+    }
+
+    /* -------------------------
+       Hero
+    ------------------------- */
+
+    .hero {
+      padding: 105px 0 95px;
+      background: var(--creme-hell);
+    }
+
+    .hero-logo {
+      width: 115px;
+      margin-bottom: 32px;
+    }
+
+    .untertitel {
+      margin-top: 9px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      color: var(--waldgruen);
     }
 
     .leitgedanke {
-      font-size: 1.6rem;
-      font-weight: bold;
-      text-align: center;
-      margin: 50px 0;
-      color: #315a38;
+      margin-top: 24px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      color: var(--waldgruen-hell);
     }
 
-    .frage {
-      font-size: 1.35rem;
-      line-height: 1.5;
+    .hero-fragen {
+      margin-top: 50px;
     }
 
-    .kreis {
-      background: white;
-      border-left: 5px solid #6c8b55;
-      padding: 25px;
-      margin-top: 25px;
-      font-weight: bold;
-      line-height: 2;
+    .hero-fragen p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+      line-height: 1.45;
+      color: var(--waldgruen);
+      margin-bottom: 26px;
     }
 
-    .formate {
+    /* -------------------------
+       WerteWald Kreis
+    ------------------------- */
+
+    .kreis-bereich {
+      background: var(--creme);
+    }
+
+    .kreis-grid {
       display: grid;
-      gap: 16px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      align-items: center;
+      gap: 70px;
+    }
+
+    .kreis-folge {
+      margin: 30px 0;
+      font-weight: 500;
+      color: var(--waldgruen);
+      line-height: 1.9;
+    }
+
+    .kreis-grafik {
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* -------------------------
+       Säulen
+    ------------------------- */
+
+    .saeulen-liste {
+      max-width: 880px;
+    }
+
+    .saeule {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 22px;
+      padding: 32px 0;
+      border-top: 1px solid var(--linie);
+    }
+
+    .saeule:first-child {
+      border-top: none;
+    }
+
+    .saeule-nummer {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      color: var(--waldgruen);
+      line-height: 1;
+    }
+
+    .saeule h3 {
+      font-size: 1.55rem;
+    }
+
+    .saeule p {
+      margin-bottom: 0;
+      max-width: 700px;
+    }
+
+    /* -------------------------
+       Bildungsformate
+    ------------------------- */
+
+    .bildungsformate {
+      background: var(--creme);
+    }
+
+    .formate-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .format {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.56);
+      border: 1px solid #e5e2d9;
+      padding: 34px;
+    }
+
+    .format h3 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .zielgruppe {
+      margin-bottom: 22px;
+      color: var(--waldgruen-hell);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .status {
+      margin: 25px 0 0;
+      padding-top: 17px;
+      border-top: 1px solid var(--linie);
+      color: var(--text-hell);
+      font-size: 0.82rem;
+    }
+
+    /* -------------------------
+       Pilotphase
+    ------------------------- */
+
+    .pilot-status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .pilot-status-block h3 {
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .ausblick {
+      margin-top: 55px;
+      max-width: 720px;
+      padding: 30px;
+      background: var(--salbei);
+    }
+
+    .ausblick h3 {
+      margin-bottom: 12px;
+    }
+
+    /* -------------------------
+       Pilotmodule / Fotos
+    ------------------------- */
+
+    .pilotmodule {
+      background: var(--creme);
+    }
+
+    .pilot-modul {
+      padding: 50px 0;
+      border-top: 1px solid var(--linie);
+    }
+
+    .pilot-modul:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .pilot-modul-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .bilder-zwei {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figure img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .wasser-hauptbild img {
+      aspect-ratio: 4 / 3;
+    }
+
+    .wasser-detailbild img {
+      aspect-ratio: 3 / 4;
+    }
+
+    .naturhueter-bild img {
+      aspect-ratio: 4 / 3;
+    }
+
+    figcaption {
+      margin-top: 9px;
+      color: var(--text-hell);
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .pilot-text h3 {
+      font-size: 2.2rem;
+    }
+
+    /* -------------------------
+       Kooperation
+    ------------------------- */
+
+    .kooperation-text {
+      max-width: 770px;
+    }
+
+    /* -------------------------
+       Hinter WerteWald
+    ------------------------- */
+
+    .hinter-wertewald {
+      background: var(--creme);
+    }
+
+    /* -------------------------
+       Kontakt
+    ------------------------- */
+
+    .kontakt-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .kontakt-logo {
+      max-width: 180px;
+    }
+
+    .kontakt-daten {
+      margin-top: 30px;
+      line-height: 1.8;
+    }
+
+    .kontakt-daten a {
+      color: var(--waldgruen);
+      text-decoration: none;
+    }
+
+    .kontakt-daten a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      background: #183d25;
-      color: white;
+      background: var(--waldgruen);
+      color: rgba(255,255,255,0.83);
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
+      padding: 24px;
+      font-size: 0.78rem;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+    /* -------------------------
+       Responsive
+    ------------------------- */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
       }
 
-      .frage {
-        font-size: 1.15rem;
+      section {
+        padding: 75px 0;
+      }
+
+      .kreis-grid,
+      .pilot-modul-grid,
+      .kontakt-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kreis-grafik {
+        max-width: 580px;
+      }
+
+      .formate-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pilot-status-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        font-size: 15.5px;
+      }
+
+      .container {
+        width: min(100% - 30px, 1120px);
+      }
+
+      .navigation-inner {
+        min-height: 68px;
+      }
+
+      .nav-logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-name {
+        font-size: 1.4rem;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero-logo {
+        width: 90px;
+      }
+
+      .magazin-zitat {
+        margin: 40px 0;
+        padding-left: 20px;
+      }
+
+      .kreis-grid {
+        gap: 35px;
+      }
+
+      .saeule {
+        grid-template-columns: 38px 1fr;
+        gap: 14px;
+      }
+
+      .format {
+        padding: 26px 22px;
+      }
+
+      .bilder-zwei {
+        grid-template-columns: 1fr;
+      }
+
+      .wasser-detailbild {
+        max-width: 72%;
+      }
+
+      .pilot-modul-grid {
+        gap: 32px;
       }
     }
   </style>
@@ -112,120 +592,871 @@
 
 <body>
 
-<header>
-  <h1>WerteWald</h1>
-  <h2>Institut für Mitgefühl &amp; Umweltbewusstsein</h2>
+<div class="seite">
 
-  <div class="status">
-    Projektpräsenz 2026 · Entwicklungs- und Pilotphase
-  </div>
-</header>
+  <nav class="navigation">
+    <div class="container navigation-inner">
 
-<main>
+      <a class="nav-logo" href="#start">
+        <img src="logo.png" alt="WerteWald Logo">
+        <span class="nav-name">WerteWald</span>
+      </a>
 
-  <div class="leitgedanke">
-    Schau hin. Entdecke. Wähle.
-  </div>
-
-  <section>
-    <p class="frage">
-      Was verändert sich, wenn Wahrnehmung nicht nur der Anfang von Lernen ist,
-      sondern der Anfang von Beziehung, Verantwortung und Gestaltung?
-    </p>
-
-    <p>
-      WerteWald entwickelt daraus ein eigenes Bildungssystem.
-      Im Mittelpunkt stehen bewusste Wahrnehmung, eigene Erkenntnis,
-      wissenschaftliche Offenheit, Reflexion, Mitgefühl und selbstbestimmtes Handeln.
-    </p>
-  </section>
-
-  <section>
-    <h2>Der WerteWald-Kreis</h2>
-
-    <p>
-      Je bewusster Menschen wahrnehmen und Zusammenhänge verstehen,
-      desto eher kann aus eigener Erkenntnis der Wunsch entstehen,
-      etwas zu verändern, zu schützen oder weiterzugeben.
-    </p>
-
-    <div class="kreis">
-      Wahrnehmung →
-      Erkenntnis →
-      Beziehung →
-      Verbundenheit →
-      Verantwortung →
-      Handlungsmöglichkeiten →
-      aktives Gestalten →
-      Teilen / Schützen
-    </div>
-  </section>
-
-  <section>
-    <h2>Die WerteWald-Didaktik</h2>
-
-    <p>
-      Menschen sollen nicht nur Wissen aufnehmen, sondern selbst beobachten,
-      Fragen stellen, Zusammenhänge erkennen und Perspektiven wechseln.
-      Beobachtung, wissenschaftliches Wissen, Vermutung und persönliche
-      Interpretation werden bewusst voneinander unterschieden.
-    </p>
-
-    <p>
-      Erkenntnisse werden nicht einfach vorgegeben. WerteWald schafft Lernräume,
-      in denen eigene Erfahrungen, Fragen und neue Sichtweisen entstehen können.
-      Daraus können Verbundenheit, Verantwortung und eigene Handlungsmöglichkeiten wachsen.
-    </p>
-  </section>
-
-  <section>
-    <h2>Bildungsformate</h2>
-
-    <div class="formate">
-
-      <div class="format">
-        <strong>WerteWald Roots</strong><br>
-        Bildungsformat für Kinder.
-      </div>
-
-      <div class="format">
-        <strong>WerteWald Plus</strong><br>
-        Bildungsformat für Jugendliche.
-      </div>
-
-      <div class="format">
-        <strong>WerteWald Maps</strong><br>
-        Bildungsformat für Eltern.
-      </div>
-
-      <div class="format">
-        <strong>WerteWald Communication</strong><br>
-        Bildungsformat rund um Wahrnehmung, Perspektiven und Kommunikation.
+      <div class="nav-links">
+        <a href="#kreis">Kreis</a>
+        <a href="#saeulen">Säulen</a>
+        <a href="#bildungsformate">Bildungsformate</a>
+        <a href="#pilotphase">Pilotphase</a>
+        <a href="#hinter-wertewald">Über WerteWald</a>
+        <a href="#kontakt">Kontakt</a>
       </div>
 
     </div>
-  </section>
+  </nav>
 
-  <section>
-    <h2>Projektstatus</h2>
 
-    <p>
-      WerteWald befindet sich derzeit in der Entwicklungs- und Pilotphase.
-      Erste Bildungsangebote wurden praktisch erprobt und ausgewertet.
-      Weitere Formate, Module, Kooperationen und Strukturen werden schrittweise entwickelt.
-    </p>
+  <header class="hero" id="start">
+    <div class="container">
 
-    <p>
-      Diese Internetpräsenz macht die Grundidee, die Bildungsformate
-      und die praktische Entwicklung von WerteWald sichtbar.
-    </p>
-  </section>
+      <div class="textbreite">
 
-</main>
+        <img
+          class="hero-logo"
+          src="logo.png"
+          alt="Logo WerteWald"
+        >
 
-<footer>
-  WerteWald · Projektpräsenz 2026
-</footer>
+        <h1><strong>WerteWald</strong></h1>
+
+        <div class="untertitel">
+          Institut für Mitgefühl &amp; Umweltbewusstsein
+        </div>
+
+        <div class="leitgedanke">
+          Schau hin. Entdecke. Wähle.
+        </div>
+
+        <blockquote class="magazin-zitat">
+          Natur ist ein grundlegender Bezugspunkt von
+          <strong>WerteWald</strong>. Dabei geht es nicht nur um
+          Naturerfahrung, sondern um das Bewusstsein, selbst Teil eines
+          größeren, lebendigen Systems zu sein.
+        </blockquote>
+
+        <div class="hero-fragen">
+          <p>
+            Was verändert sich, wenn Wahrnehmung nicht nur der Anfang von
+            Lernen ist, sondern auch ein Zugang zu sich selbst?
+          </p>
+
+          <p>
+            Was ist, wenn eine Erkenntnis den Blick auf das eigene Leben
+            verändert – und damit auch darauf, wie wir Zusammenhänge wahrnehmen?
+          </p>
+
+          <p>
+            Kann es sein, dass unser Blick durch unterschiedliche „Brillen“
+            beeinflusst wird? Dass Erfahrungen zu Filtern werden, die unsere
+            Wahrnehmung prägen – und vielleicht manchmal auch verzerren?
+          </p>
+        </div>
+
+        <div class="intro">
+          <p>
+            Diese und weitere Fragen beleuchtet <strong>WerteWald</strong> auf
+            unterschiedlichen Ebenen und möchte damit die Aufmerksamkeit für
+            sich selbst, für andere und für die Umwelt neu beleben.
+          </p>
+
+          <p>
+            Menschen werden eingeladen, Fragen zu stellen, Perspektiven zu
+            wechseln und eigene Schlussfolgerungen bewusst zu prüfen – mit dem
+            Ziel, Orientierung zu gewinnen und die eigene Souveränität zu stärken.
+          </p>
+
+          <p>
+            Dabei geht es nicht darum, fertige Antworten vorzugeben.
+            <strong>WerteWald</strong> schafft Räume, in denen Menschen selbst
+            entdecken können, was sie wahrnehmen, was sie verstehen, was sie
+            berührt und welche Möglichkeiten daraus für sie entstehen.
+          </p>
+
+          <p>
+            <strong>WerteWald</strong> gibt Impulse, mit der Natur und in ihr
+            bewusster wahrzunehmen, zu reflektieren und neue Perspektiven zu
+            entdecken – für sich selbst, im Miteinander und auf Augenhöhe mit
+            der Natur.
+          </p>
+        </div>
+
+        <blockquote class="magazin-zitat">
+          Aus Beobachtung kann Erkenntnis entstehen. Aus Erkenntnis Beziehung.
+          Aus Beziehung Verbundenheit. Und dort, wo Verbundenheit wächst,
+          können Verantwortung und eigene Handlungsmöglichkeiten sichtbar werden.
+        </blockquote>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="kreis-bereich" id="kreis">
+      <div class="container">
+
+        <div class="kreis-grid">
+
+          <div>
+            <h2>Der WerteWald Kreis</h2>
+
+            <p>
+              Der <strong>WerteWald Kreis</strong> macht sichtbar, wie aus
+              bewusster Wahrnehmung ein Entwicklungsprozess entsteht.
+            </p>
+
+            <div class="kreis-folge">
+              Wahrnehmung → Erkenntnis → Beziehung ↔ Verbundenheit →
+              Verantwortung → Handlungsmöglichkeiten → Teilen / Schützen
+            </div>
+
+            <p>
+              Dieser dynamische Prozess kann Menschen dabei unterstützen, mit
+              Veränderungen, Unsicherheiten und unterschiedlichen Perspektiven
+              bewusster umzugehen, eigene Möglichkeiten zu erkennen und ihr
+              Leben selbstbestimmter zu gestalten.
+            </p>
+
+            <p>
+              Er kann Selbstwirksamkeit stärken, bewusstes Handeln fördern und
+              die Fähigkeit unterstützen, sich in komplexen Situationen zu
+              orientieren. Die bewusste Auseinandersetzung mit eigenen
+              Reaktionen, Bedürfnissen und Handlungsmöglichkeiten kann zugleich
+              dazu beitragen, mit Veränderungen und Belastungen resilienter
+              umzugehen.
+            </p>
+
+            <p>
+              Durch Perspektivwechsel, bewusste Kommunikation und
+              gemeinschaftliches Handeln können soziale Kompetenzen und
+              Beziehungsfähigkeit weiterentwickelt werden – im Umgang mit sich
+              selbst, mit anderen Menschen und mit der Umwelt.
+            </p>
+
+            <blockquote class="magazin-zitat">
+              Entscheidend ist die Bewegung: Wahrnehmung kann Orientierung
+              eröffnen und Orientierung Handlungsspielräume.
+            </blockquote>
+          </div>
+
+          <div>
+            <img
+              class="kreis-grafik"
+              src="wertewald-kreis.png"
+              alt="Der WerteWald Kreis: Wahrnehmung, Erkenntnis, Beziehung, Verbundenheit, Verantwortung, Handlungsmöglichkeiten und Teilen oder Schützen"
+            >
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="saeulen">
+      <div class="container">
+
+        <h2>Die sieben Säulen von WerteWald</h2>
+
+        <div class="saeulen-liste">
+
+          <article class="saeule">
+            <div class="saeule-nummer">1</div>
+            <div>
+              <h3>Achtsamkeit</h3>
+              <p>
+                Für <strong>WerteWald</strong> bedeutet Achtsamkeit, dem
+                gegenwärtigen Erleben bewusst Aufmerksamkeit zu schenken –
+                sich selbst, anderen Menschen und der Umwelt.
+              </p>
+              <p>
+                Sie beginnt bei den Sinnen, geht aber darüber hinaus. Eigene
+                Gedanken, Gefühle, Reaktionen und äußere Eindrücke werden
+                wahrgenommen, ohne sie vorschnell einzuordnen oder zu bewerten.
+              </p>
+            </div>
+          </article>
+
+          <article class="saeule">
+            <div class="saeule-nummer">2</div>
+            <div>
+              <h3>Wahrnehmung &amp; Reflexion</h3>
+              <p>
+                <strong>WerteWald</strong> beginnt mit bewusster Wahrnehmung.
+                Beobachtungen, eigene Reaktionen und Erfahrungen werden bewusst
+                betrachtet und reflektiert. Dabei wird zwischen Beobachtung,
+                Wissen, Vermutung und persönlicher Interpretation unterschieden.
+              </p>
+            </div>
+          </article>
+
+          <article class="saeule">
+            <div class="saeule-nummer">3</div>
+            <div>
+              <h3>Natur &amp; wissenschaftliche Erkenntnis</h3>
+              <p>
+                Natur ist in <strong>WerteWald</strong> nicht nur Lernort,
+                sondern Ausgangspunkt für Fragen, Erkenntnisse und Entwicklungen.
+                Wissenschaftliche Erkenntnisse helfen dabei, Beobachtetes
+                einzuordnen und Orientierung zu schaffen, ohne persönliche
+                Erfahrungen oder offene Fragen vollständig zu ersetzen.
+              </p>
+            </div>
+          </article>
+
+          <article class="saeule">
+            <div class="saeule-nummer">4</div>
+            <div>
+              <h3>Wertschätzung</h3>
+              <p>
+                Für <strong>WerteWald</strong> beginnt Wertschätzung dort, wo
+                etwas nicht nur als vorhanden, sondern als wertvoll erfahren
+                wird. Sie verbindet Achtung mit Dankbarkeit und dem Bewusstsein,
+                dass das Wertvolle nicht selbstverständlich ist. Daraus entsteht
+                der Wunsch, achtsam damit umzugehen, es zu bewahren und zu schützen.
+              </p>
+
+              <blockquote class="magazin-zitat">
+                Verbundenheit und Wertschätzung beeinflussen sich gegenseitig.
+                Wer Verbundenheit erfährt, kann den Wert tiefer erkennen. Und
+                wer etwas wirklich wertschätzt, behandelt die Beziehung dazu anders.
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="saeule">
+            <div class="saeule-nummer">5</div>
+            <div>
+              <h3>Verbundenheit, Beziehung &amp; Mitgefühl</h3>
+              <p>
+                Für <strong>WerteWald</strong> bedeutet Verbundenheit, sich
+                selbst nicht als isoliert, sondern als Teil eines größeren
+                Zusammenhangs zu begreifen.
+              </p>
+
+              <p>
+                Beziehung und Verbundenheit stehen dabei in Wechselwirkung.
+                Erkenntnisse können einen bewussteren Bezug zu sich selbst, zu
+                anderen Menschen und zur Natur eröffnen. Zugleich kann das
+                Erleben von Verbundenheit Beziehungen sichtbarer, bewusster und
+                tiefer erfahrbar machen.
+              </p>
+
+              <p>
+                Wo Menschen sich schließlich als Teil eines größeren
+                Zusammenhangs erfahren, wächst Mitgefühl und zugleich das
+                Bewusstsein dafür, dass das eigene Handeln Auswirkungen hat.
+              </p>
+            </div>
+          </article>
+
+          <article class="saeule">
+            <div class="saeule-nummer">6</div>
+            <div>
+              <h3>Perspektivwechsel &amp; Orientierung</h3>
+              <p>
+                Unterschiedliche Sichtweisen dürfen nebeneinander bestehen.
+                <strong>WerteWald</strong> lädt dazu ein, Perspektiven zu
+                wechseln, Unsicherheiten auszuhalten und die eigene Sicht dort
+                zu prüfen, wo es für die jeweilige Situation sinnvoll ist.
+                Orientierung entsteht nicht durch fertige Antworten, sondern
+                durch bewusstes Einordnen und Verstehen.
+              </p>
+            </div>
+          </article>
+
+          <article class="saeule">
+            <div class="saeule-nummer">7</div>
+            <div>
+              <h3>Wahlfreiheit</h3>
+              <p>
+                <strong>WerteWald</strong> möchte Menschen darin stärken,
+                eigene Möglichkeiten wahrzunehmen, Entscheidungen bewusst zu
+                treffen und Gestaltungsspielräume zu erkennen.
+              </p>
+
+              <p>
+                Die individuelle Wahlfreiheit bleibt dabei ein zentraler
+                Bezugspunkt. <strong>WerteWald</strong> geht davon aus, dass
+                sie grundsätzlich vorhanden ist, jedoch durch Erfahrungen,
+                Erwartungen, Bewertungen oder äußere Bedingungen verdeckt und
+                zeitweise kaum noch spürbar sein kann.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="bildungsformate" id="bildungsformate">
+      <div class="container">
+
+        <h2>Bildungsformate</h2>
+
+        <div class="abschnitt-einleitung">
+          <p>
+            Natur ist ein grundlegender Bezug von <strong>WerteWald</strong>.
+            Je nach Format kann sie als Erfahrungsraum, Lernpartner, lebendiges
+            Gegenüber oder als verbindendes Element für unterschiedliche Themen
+            und Fragestellungen wirken.
+          </p>
+
+          <p>
+            Die einzelnen Formate greifen unterschiedliche Altersgruppen,
+            Lebensphasen, Themen und Zugänge auf und werden so gestaltet, dass
+            sie zur Zielgruppe, zur Situation und zum jeweiligen Lernraum passen.
+          </p>
+
+          <p>
+            So entsteht ein zusammenhängendes, dynamisches Bildungssystem, das
+            unterschiedliche Altersgruppen, Lebensphasen und Zugänge miteinander
+            verbindet.
+          </p>
+        </div>
+
+
+        <div class="formate-grid">
+
+          <article class="format">
+            <h3>WerteWald Roots</h3>
+            <div class="zielgruppe">
+              Für Kinder von etwa sechs bis zehn Jahren.
+            </div>
+
+            <p>
+              <strong>WerteWald Roots</strong> lädt Kinder dazu ein, Natur
+              unmittelbar zu erleben, selbst zu beobachten, Fragen zu stellen
+              und eigene Entdeckungen zu machen.
+            </p>
+
+            <p>
+              Natur wird dabei nicht nur als Lernort, sondern als Lernpartner
+              verstanden. Bewegung, Sinneserfahrungen, Forschen, gemeinsames
+              Erleben und Reflexion greifen ineinander.
+            </p>
+
+            <p>
+              Kinder entdecken möglichst selbst, bevor Antworten gegeben
+              werden. Gemeinschaft steht vor Wettbewerb, Vielfalt gehört
+              selbstverständlich zum gemeinsamen Lernen und Naturverbundenheit
+              schafft Raum für Wertschätzung, Mitgefühl und Umweltbewusstsein.
+            </p>
+
+            <p class="status">
+              Status: 2026 praktisch erprobt – weitere Module in Entwicklung.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Plus</h3>
+            <div class="zielgruppe">
+              Für ältere Kinder und Jugendliche von etwa zehn bis achtzehn Jahren.
+            </div>
+
+            <p>
+              <strong>WerteWald Plus</strong> begleitet junge Menschen in einer
+              Lebensphase, die von körperlichen Veränderungen, wachsender
+              Eigenständigkeit, neuen sozialen Erfahrungen und einer zunehmenden
+              Auseinandersetzung mit sich selbst und der Gesellschaft geprägt ist.
+            </p>
+
+            <p>
+              Im Mittelpunkt stehen Eigenkompetenz, Selbstreflexion und
+              Orientierung. Jugendliche werden eingeladen, ihren Körper, ihre
+              Gefühle, ihr Denken, ihre Beziehungen und gesellschaftliche
+              Einflüsse bewusster wahrzunehmen und einzuordnen.
+            </p>
+
+            <p>
+              Natur dient dabei als gemeinsame Sprache und Orientierung.
+              Naturmetaphern helfen, komplexe Themen verständlicher zu machen,
+              Zusammenhänge zu erkennen und eigene Erkenntnisse zu entwickeln.
+            </p>
+
+            <p class="status">
+              Status: In Format- und Modulentwicklung.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Maps</h3>
+            <div class="zielgruppe">
+              Für Eltern und Bezugspersonen.
+            </div>
+
+            <p>
+              <strong>WerteWald Maps</strong> bietet Orientierung für Erwachsene,
+              die Kinder und Jugendliche begleiten. Im Mittelpunkt stehen
+              Reflexion, Perspektivwechsel, die bewusste Auseinandersetzung mit
+              der eigenen Rolle im Miteinander und das differenzierte Betrachten
+              von Situationen, um mögliche Zusammenhänge, Bedürfnisse und
+              Belastungen im Kontext eines Verhaltens besser wahrnehmen und
+              einordnen zu können.
+            </p>
+
+            <p class="status">
+              Status: In Format- und Modulentwicklung.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Sense</h3>
+            <div class="zielgruppe">
+              Für Erwachsene, Familien und Gruppen.
+            </div>
+
+            <p>
+              <strong>WerteWald Sense</strong> ist ein körperorientiertes Format,
+              das Menschen über ihre vorhandenen Sinneskanäle wieder stärker ins
+              unmittelbare Erleben und ins eigene Körpergefühl bringt.
+            </p>
+
+            <p>
+              Es geht nicht darum, bestimmte Sinne vorauszusetzen, sondern
+              darum, die jeweils verfügbaren Wahrnehmungswege bewusst zu nutzen.
+            </p>
+
+            <p>
+              Damit möchte <strong>WerteWald Sense</strong> die Eigenwahrnehmung
+              stärken und Menschen darin unterstützen, ihren Körper bewusster
+              als Quelle von Information und Orientierung zu erleben.
+            </p>
+
+            <p class="status">
+              Status: In Format- und Modulentwicklung.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Communication</h3>
+            <div class="zielgruppe">
+              Für Jugendliche und Erwachsene.
+            </div>
+
+            <p>
+              <strong>WerteWald Communication</strong> richtet den Blick auf
+              Sprache und ihre Wirkung. Im Mittelpunkt steht die Frage, wie
+              Kommunikation Wahrnehmung, Beziehungen und gegenseitiges Verstehen
+              beeinflusst und wie umgekehrt Erfahrungen, Erwartungen,
+              Bewertungen und persönliche Deutungsmuster unsere innere und
+              äußere Kommunikation prägen.
+            </p>
+
+            <p>
+              <strong>WerteWald</strong> möchte Menschen darin stärken,
+              bewusster mit Sprache umzugehen – im Gespräch mit anderen ebenso
+              wie im Umgang mit sich selbst.
+            </p>
+
+            <p class="status">
+              Status: In Format- und Modulentwicklung.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Collective</h3>
+            <div class="zielgruppe">
+              Für Jugendliche und Erwachsene.
+            </div>
+
+            <p>
+              <strong>WerteWald Collective</strong> richtet den Blick auf das,
+              was uns prägt, lange bevor wir bewusst darüber nachdenken:
+              gesellschaftliche Vorstellungen, kulturelle Muster, Rollenbilder,
+              Bewertungen und Erwartungen.
+            </p>
+
+            <p>
+              Doch was davon gehört tatsächlich zur eigenen Persönlichkeit?
+              Wie viel Individualität fließt in unser Verhalten und unsere
+              alltäglichen Entscheidungen ein – und wie viel davon folgt
+              Mustern, die wir übernommen haben, ohne sie bewusst gewählt zu haben?
+            </p>
+
+            <p>
+              Diese und weitere Fragen werden in
+              <strong>WerteWald Collective</strong> aufgegriffen und aus
+              unterschiedlichen Blickwinkeln betrachtet.
+            </p>
+
+            <p class="status">
+              Status: In Format- und Modulentwicklung.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Ventures</h3>
+            <div class="zielgruppe">
+              Für Jugendliche und Erwachsene.
+            </div>
+
+            <p>
+              <strong>WerteWald Ventures</strong> verbindet Naturerleben mit
+              Abenteuer, Spiel und Gemeinschaft. Rätsel, Rollen, Geschichten
+              und gemeinsame Herausforderungen schaffen Zugänge, in denen Natur
+              nicht nur als Rückzugsort, sondern als lebendiger Raum für
+              Spannung, Freude und gemeinsames Erleben erfahren wird.
+            </p>
+
+            <p class="status">
+              Status: Konzeptionelle Idee.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Pulse &amp; Move</h3>
+            <div class="zielgruppe">
+              Für Jugendliche und Erwachsene.
+            </div>
+
+            <p>
+              <strong>WerteWald Pulse &amp; Move</strong> verbindet Bewegung in
+              der Natur mit Körperwahrnehmung, Rhythmus, Klang und stärkenden
+              sprachlichen Impulsen.
+            </p>
+
+            <p>
+              Bewusste Bewegung, direkter Kontakt zum natürlichen Boden und
+              unterschiedliche akustische Reize schaffen einen Erfahrungsraum,
+              in dem Menschen ihren Körper intensiver spüren, neu kennenlernen
+              und Freude an Bewegung entwickeln können.
+            </p>
+
+            <p>
+              Im Mittelpunkt steht die Wertschätzung für den eigenen Körper –
+              nicht als etwas Selbstverständliches, sondern als lebendiges,
+              vielseitiges System.
+            </p>
+
+            <p class="status">
+              Status: Konzeptionelle Idee.
+            </p>
+          </article>
+
+
+          <article class="format">
+            <h3>WerteWald Digitals</h3>
+            <div class="zielgruppe">
+              Für Jugendliche und Erwachsene.
+            </div>
+
+            <p>
+              <strong>WerteWald Digitals</strong> beschäftigt sich mit
+              Orientierung in digitalen Informationsräumen. Dabei wird
+              untersucht, wie Inhalte entstehen, wie Bilder, Sprache und
+              technische Systeme unsere Wahrnehmung beeinflussen und woran sich
+              Information, Manipulation, Inszenierung und Täuschung unterscheiden
+              lassen.
+            </p>
+
+            <p>
+              <strong>WerteWald</strong> möchte Menschen darin stärken,
+              Informationen einzuordnen, Quellen und Darstellungsweisen bewusster
+              zu prüfen und zu hinterfragen, warum Inhalte auf eine bestimmte
+              Weise dargestellt werden.
+            </p>
+
+            <p class="status">
+              Status: Konzeptionelle Idee.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="pilotphase">
+      <div class="container">
+
+        <h2>Pilotphase &amp; Entwicklung</h2>
+
+        <div class="pilot-status-grid">
+
+          <div class="pilot-status-block">
+            <h3>Was wurde erprobt?</h3>
+            <p>
+              2026 wurden mit <strong>WerteWald Roots</strong> die ersten beiden
+              Module praktisch mit Kindergruppen umgesetzt und systematisch
+              ausgewertet.
+            </p>
+          </div>
+
+          <div class="pilot-status-block">
+            <h3>Was wurde sichtbar?</h3>
+            <p>
+              Besonders stark war die Beteiligung dort, wo Kinder selbst
+              beobachten, experimentieren, gestalten und handeln konnten.
+            </p>
+          </div>
+
+          <div class="pilot-status-block">
+            <h3>Wie entwickelt sich WerteWald weiter?</h3>
+            <p>
+              Praktische Erfahrungen und Beobachtungen fließen fortlaufend in
+              die weitere Entwicklung ein. <strong>WerteWald</strong> versteht
+              Optimierung nicht als nachträgliche Korrektur eines fertigen
+              Systems, sondern als natürlichen Bestandteil eines dynamischen
+              Bildungsprojekts, das sich aus realen Situationen,
+              unterschiedlichen Menschen und neuen Erkenntnissen weiterentwickelt.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="ausblick">
+          <h3>Ausblick</h3>
+
+          <p>
+            Die praktische Erprobung von <strong>WerteWald Roots</strong> stieß
+            auf weiterführendes Interesse. Für September sind Gespräche über
+            eine mögliche regelmäßige Zusammenarbeit mit einer Gemeinde geplant.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="pilotmodule">
+      <div class="container">
+
+        <h2>Pilotmodule 2026</h2>
+
+
+        <article class="pilot-modul">
+          <div class="pilot-modul-grid">
+
+            <div class="bilder-zwei">
+
+              <figure class="wasser-hauptbild">
+                <img
+                  src="wasserforscher-materialien.jpg"
+                  alt="Forschungsmaterialien des WerteWald Roots Moduls Wasserforscher mit Kommissar Schattenpfote"
+                >
+                <figcaption>
+                  Wasserforscher – Forschungsmaterialien und Kommissar Schattenpfote
+                </figcaption>
+              </figure>
+
+              <figure class="wasser-detailbild">
+                <img
+                  src="wasserforscher-pfotenkarten.jpg"
+                  alt="Kinder arbeiten gemeinsam mit Pfotenkarten beim WerteWald Roots Modul Wasserforscher"
+                >
+                <figcaption>
+                  Wasserforscher – Arbeit mit den Pfotenkarten
+                </figcaption>
+              </figure>
+
+            </div>
+
+            <div class="pilot-text">
+              <h3>Wasserforscher – Jeder Tropfen zählt</h3>
+
+              <p>
+                Die Kinder gingen der Frage nach, warum Menschen, Tiere und
+                Pflanzen Wasser brauchen und wie alles miteinander verbunden ist.
+                In kleinen Forscherteams untersuchten sie unterschiedliche
+                Wasserspuren, beobachteten am Biotop und vertieften ihre
+                Erkenntnisse praktisch – unter anderem beim Bau einer
+                Insektentränke.
+              </p>
+            </div>
+
+          </div>
+        </article>
+
+
+        <article class="pilot-modul">
+          <div class="pilot-modul-grid">
+
+            <figure class="naturhueter-bild">
+              <img
+                src="naturhueter.jpg"
+                alt="Kinder beobachten gemeinsam im Naturraum beim WerteWald Roots Modul Naturhüter"
+              >
+              <figcaption>
+                Naturhüter – gemeinsames Beobachten im Naturraum
+              </figcaption>
+            </figure>
+
+            <div class="pilot-text">
+              <h3>Naturhüter – Spiel, Spaß &amp; Verantwortung</h3>
+
+              <p>
+                Die Kinder untersuchten Spuren menschlicher Einflüsse in der
+                Natur und beschäftigten sich mit möglichen Gefahren für Tiere
+                und Lebensräume. In Such-, Sortier- und Rettungsaufgaben wurde
+                Verantwortung nicht nur besprochen, sondern praktisch erfahrbar
+                gemacht.
+              </p>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <section id="kooperation">
+      <div class="container">
+
+        <div class="kooperation-text">
+          <h2>Kooperation &amp; Projektentwicklung</h2>
+
+          <p>
+            <strong>WerteWald</strong> befindet sich in der Entwicklungs- und
+            Pilotphase. Die Bildungsformate werden schrittweise weiterentwickelt,
+            praktisch erprobt und an unterschiedliche Zielgruppen, Lernorte und
+            Rahmenbedingungen angepasst.
+          </p>
+
+          <p>
+            Für die weitere Entwicklung sind Kooperationen mit Gemeinden,
+            Bildungseinrichtungen, Natur- und Umweltakteuren sowie weiteren
+            passenden Partnern ausdrücklich willkommen.
+          </p>
+
+          <p>
+            Im Mittelpunkt stehen gemeinsame Vorhaben, die zu den Grundgedanken
+            von <strong>WerteWald</strong> passen und Raum für bewusste
+            Wahrnehmung, Bewegung und Körpererfahrung, Reflexion, soziale
+            Kompetenzen, gemeinschaftliches Handeln und selbstbestimmtes Lernen
+            schaffen.
+          </p>
+
+          <p>
+            Natur nimmt dabei eine besondere Rolle ein.
+            <strong>WerteWald</strong> möchte dazu beitragen, dass Menschen Natur
+            nicht nur erleben, sondern ihren Wert bewusster erkennen, ihr mit
+            Respekt begegnen und Verantwortung für ihren Schutz entwickeln.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="hinter-wertewald" id="hinter-wertewald">
+      <div class="container">
+
+        <div class="textbreite">
+          <h2>Hinter WerteWald</h2>
+
+          <p>
+            <strong>WerteWald</strong> wurde von Andrea Marija Zivkovic entwickelt.
+          </p>
+
+          <p>
+            Geprägt ist das Projekt von persönlichen Erfahrungen, dem Muttersein,
+            einer starken Verbundenheit mit der Natur und der langjährigen
+            Auseinandersetzung mit Wahrnehmung, Kommunikation, gesellschaftlichen
+            Einflüssen und selbstbestimmtem Handeln.
+          </p>
+
+          <p>
+            Hinzu kommen eine kaufmännische und naturwissenschaftliche Ausbildung,
+            Führungserfahrung, analytisches Arbeiten in Labor und Diagnostik sowie
+            unternehmerische Erfahrung.
+          </p>
+
+          <p>
+            <strong>WerteWald</strong> versteht Entwicklung als einen fortlaufenden
+            Prozess. Weiterlernen, reflektieren, neue Erkenntnisse aufnehmen und
+            in Bewegung bleiben gehören deshalb selbstverständlich dazu.
+          </p>
+
+          <p>
+            Fachliche Weiterbildungen in Natur- und Umweltpädagogik, Methodik und
+            Didaktik, Inklusion sowie Präventions- und Resilienzpädagogik sind
+            Teil dieser weiteren Entwicklung.
+          </p>
+
+          <blockquote class="magazin-zitat">
+            Weiterentwicklung bedeutet, in Bewegung zu bleiben – wie ein Wald,
+            der sich verändert, wächst und dennoch sein Wesen bewahrt.
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="kontakt">
+      <div class="container">
+
+        <div class="kontakt-grid">
+
+          <div>
+            <img
+              class="kontakt-logo"
+              src="logo.png"
+              alt="WerteWald Logo"
+            >
+          </div>
+
+          <div>
+            <h2>Kontakt</h2>
+
+            <p class="textbreite">
+              Sie möchten mehr über <strong>WerteWald</strong> erfahren, sich
+              über eine mögliche Kooperation austauschen oder die weitere
+              Entwicklung begleiten?
+            </p>
+
+            <div class="kontakt-daten">
+              <strong>Andrea Marija Zivkovic</strong><br>
+              Althengstett, Region Stuttgart<br>
+              <a href="mailto:wertewald.institut@gmail.com">
+                wertewald.institut@gmail.com
+              </a>
+            </div>
+
+            <blockquote class="magazin-zitat">
+              Lebendiges braucht mehr als Funktion. Es braucht Wahrnehmung,
+              Beziehung und Respekt. <strong>WerteWald</strong> möchte dafür
+              den Blick öffnen.
+            </blockquote>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    WerteWald · Institut für Mitgefühl &amp; Umweltbewusstsein ·
+    Projektpräsenz 2026
+  </footer>
+
+</div>
 
 </body>
 </html>
