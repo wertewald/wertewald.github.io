@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WerteWald – Institute for Compassion &amp; Environmental Awareness</title>
+<meta name="description" content="WerteWald – Institute for Compassion &amp; Environmental Awareness. Project Presence 2026 in the development and pilot phase.">
+<link rel="icon" type="image/png" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WerteWald – Institute for Compassion &amp; Environmental Awareness">
+<meta property="og:description" content="WerteWald – Institute for Compassion &amp; Environmental Awareness. Project Presence 2026 in the development and pilot phase.">
+<meta property="og:url" content="https://wertewald.github.io/">
+<meta property="og:image" content="https://wertewald.github.io/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gruen: #1a412b;
+  --tannengruen: #0b5a3c;
+  --leitgedanke-dunkel: #123326;
+  --zitatgruen: #3f7458;
+  --gruen-dunkel: #102e1d;
+  --beige: #f3ecdf;
+  --beige-hell: #faf6ef;
+  --beige-salbei: #f1f5ee;
+  --beige-formatbereich: #ece8dc;
+  --karte: #fcf8f2;
+  --linie: #d8cfbf;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--gruen);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.54;
+}
+img { display:block; max-width:100%; }
+a { color:var(--gruen); }
+strong { font-weight:700; }
+p { margin:0 0 16px; }
+.container { width:min(1080px, calc(100% - 40px)); margin:0 auto; }
+.textbreite { max-width:720px; }
+section { padding:70px 0; }
+section + section { border-top:1px solid var(--linie); }
+h1,h2,h3 {
+  margin-top:0;
+  color:var(--tannengruen);
+  font-family:"Cormorant Garamond", Georgia, serif;
+  font-weight:700;
+  line-height:1.08;
+}
+h1 { margin-bottom:0; font-size:clamp(3.3rem,6.4vw,5.05rem); }
+h2 { margin-bottom:24px; font-size:clamp(2.25rem,4vw,3.1rem); }
+h3 { margin-bottom:10px; font-size:1.68rem; }
+
+#didaktik > .container > h2,
+#kreis > .container h2,
+#saeulen > .container > h2,
+#bildungsformate > .container > h2,
+#plus18 > .container > h2,
+#tourismus > .container > h2,
+#fauna > .container > h2 {
+  font-size:clamp(2.25rem,4vw,3.1rem);
+  line-height:1.08;
+}
+
+.abschnitt-einleitung { max-width:740px; margin-bottom:36px; }
+.logo-freistellen { mix-blend-mode:multiply; }
+.hero {
+  position:relative;
+  padding:28px 0 66px;
+  background:linear-gradient(
+    180deg,
+    #ded2bd 0%,
+    #e9decc 14%,
+    #f6eee2 28%,
+    #fffaf2 43%,
+    #fffaf2 57%,
+    #f2e8d8 76%,
+    #dfd3bf 100%
+  );
+}
+.hero .textbreite { margin:0 auto; }
+.hero-titel { text-align:center; }
+.hero-logo { width:215px; margin:18px auto -6px; }
+.untertitel {
+  margin-top:12px; margin-bottom:0; font-size:1.18rem;
+  line-height:1.3; text-align:center; font-style:italic;
+}
+.leitgedanke {
+  display:inline-block;
+  width:fit-content;
+  max-width:100%;
+  margin-top:62px;
+  color:var(--leitgedanke-dunkel);
+  font-size:clamp(1.88rem,4.4vw,2.85rem);
+  font-weight:600;
+  line-height:1.12;
+  text-align:center;
+}
+.leitgedanke-zeile { display:block; white-space:nowrap; }
+.leitgedanke::before,
+.leitgedanke::after {
+  content:""; display:block; width:100%;
+  border-top:2px dotted rgba(18,51,38,.48);
+}
+.leitgedanke::before { margin-bottom:28px; }
+.leitgedanke::after { margin-top:28px; }
+
+.magazin-zitat {
+  width:100%; max-width:720px; margin:58px 0;
+  padding:2px 0 2px 18px;
+  border-left:3px solid var(--gruen-dunkel);
+  color:var(--zitatgruen);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.05rem; font-style:italic; font-weight:500;
+  line-height:1.45; text-align:left;
+}
+.magazin-zitat strong { font-style:italic; }
+.hero .magazin-zitat { margin:58px 0; }
+.kreis-zitat,.abschluss-zitat { margin-top:58px; margin-bottom:58px; }
+.hero-fragen { margin-top:0; margin-bottom:30px; }
+.hero-fragen p { margin:0 0 9px; font-weight:700; }
+.hero-fragen p:last-child { margin-bottom:0; }
+.hero-textblock { margin-top:28px; }
+.hero-textblock p { margin-bottom:9px; }
+.hero-impuls { margin-top:25px; margin-bottom:0; }
+
+.didaktik { background:var(--beige-hell); }
+.didaktik .textbreite { max-width:740px; }
+
+.kreis-bereich { background:var(--beige-salbei); }
+.kreis-einstieg { max-width:720px; margin:0 auto; text-align:center; }
+.kreis-einstieg > p { text-align:left; }
+.kreis-folge {
+  margin:24px auto 30px; font-size:1.04rem;
+  font-weight:600; line-height:1.58; text-align:center;
+}
+.kreis-folge div { margin-bottom:5px; }
+.kreis-grafik {
+  width:100%; max-width:650px; margin:34px auto 0; background:transparent;
+}
+.kreis-erklaerung { max-width:720px; margin-top:28px; }
+.kreis-zusammen { margin-bottom:24px; }
+.kreis-zusammen p { margin-bottom:7px; }
+.kreis-perspektivwechsel { margin-top:24px; }
+
+.saeulen-liste { max-width:860px; }
+.saeule {
+  display:grid; grid-template-columns:44px 1fr; gap:18px;
+  padding:27px 0; border-top:1px solid var(--linie);
+}
+.saeule:first-child { border-top:none; }
+.saeule-nummer { padding-top:3px; font-size:1.58rem; font-weight:700; line-height:1; }
+.saeule h3 { font-size:1.54rem; }
+.saeule p { max-width:710px; }
+.saeulen-zitat {
+  position:relative; width:100%; max-width:720px;
+  margin:18px 0 34px; padding:26px 0 0 18px; border-left:none;
+}
+.saeulen-zitat::before {
+  content:""; position:absolute; top:0; left:0; right:0; height:1px; background:var(--linie);
+}
+.saeulen-zitat::after {
+  content:""; position:absolute; top:26px; left:0; width:3px;
+  height:calc(100% - 26px); background:var(--gruen-dunkel);
+}
+
+.bildungsformate { background:var(--beige-formatbereich); }
+.plus18 { background:var(--beige-hell); }
+.tourismus { background:var(--beige-salbei); }
+.fauna { background:var(--beige); }
+.formate-grid {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px;
+}
+.plus18 .formate-grid { grid-template-columns:minmax(0, 1fr); max-width:740px; }
+.format { padding:30px; background:var(--karte); border:1px solid var(--linie); }
+.format h3 { margin-bottom:3px; font-size:1.82rem; }
+.zielgruppe {
+  margin-bottom:27px; font-size:1rem; font-weight:600; font-style:italic;
+}
+.status {
+  margin:22px 0 0; padding-top:15px; border-top:1px solid var(--linie);
+  font-size:.9rem; line-height:1.45;
+}
+.tourismus-leitsatz,
+.fauna-leitsatz {
+  max-width:740px; margin:0 0 28px;
+  color:var(--tannengruen); font-size:1.45rem; font-weight:700; line-height:1.25;
+}
+.tourismus-frage {
+  max-width:740px; margin:30px 0;
+  font-size:1.35rem; font-weight:700; color:var(--tannengruen);
+}
+
+.pilot-status-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
+.pilot-status-block h3 { font-size:1.42rem; }
+.entwicklungsblock { margin-top:42px; }
+.entwicklungsblock:first-of-type { margin-top:0; }
+#pilotphase h2 { margin-bottom:42px; }
+.entwicklungsblock h3 { margin-bottom:24px; font-size:1.55rem; }
+.pilotmodule { background:var(--beige-hell); }
+.pilot-modul { padding:44px 0; border-top:1px solid var(--linie); }
+.pilot-modul:first-of-type { padding-top:0; border-top:none; }
+.pilot-modul-grid {
+  display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:start;
+}
+.bilder-zwei { display:grid; grid-template-columns:1.2fr .8fr; gap:16px; align-items:start; }
+figure { margin:0; }
+figure img { width:100%; object-fit:cover; }
+.wasser-hauptbild img { aspect-ratio:4/3; }
+.wasser-detailbild { text-align:center; }
+.wasser-detailbild img { width:88%; margin:0 auto; aspect-ratio:3/4; }
+.naturhueter-bild img { aspect-ratio:4/3; }
+figcaption { margin-top:8px; font-size:.84rem; line-height:1.4; text-align:center; }
+.pilot-text h3 { margin-bottom:4px; font-size:1.82rem; text-align:center; }
+.pilot-text .zielgruppe { margin-bottom:28px; text-align:center; font-style:italic; }
+.pilot-text p { text-align:left; }
+.kooperation-text { max-width:740px; }
+.hinter-wertewald { background:var(--beige-hell); }
+.kontakt-grid { text-align:center; }
+.kontakt-logo { width:190px; margin:0 auto 10px; }
+.kontakt-grid h2 { text-align:center; }
+.kontakt-grid .textbreite { margin:0 auto; }
+.kontakt-daten { margin-top:46px; font-size:1.05rem; line-height:1.6; }
+.kontakt-daten a { text-decoration:none; }
+.kontakt-zitat { margin:58px auto 0; text-align:left; }
+.kontakt-zitat-schluss { display:block; margin-top:10px; }
+
+.language-switch {
+  position:absolute; top:18px; right:20px; z-index:10;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:.95rem; font-weight:600; letter-spacing:.02em;
+}
+.language-switch a { color:var(--gruen-dunkel); text-decoration:none; }
+.language-switch a:hover,.language-switch a:focus { text-decoration:underline; }
+.language-switch .active {
+  font-weight:700; text-decoration:underline; text-underline-offset:3px;
+}
+
+.scroll-nav {
+  position:fixed;
+  right:20px;
+  bottom:28px;
+  z-index:50;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.scroll-nav button {
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:1px solid rgba(26,65,43,.28);
+  background:rgba(250,246,239,.94);
+  color:var(--gruen);
+  font-family:Georgia,serif;
+  font-size:1.5rem;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 2px 9px rgba(16,46,29,.08);
+}
+.scroll-nav button:hover,
+.scroll-nav button:focus-visible {
+  background:#fffaf2;
+  outline:2px solid rgba(11,90,60,.25);
+  outline-offset:2px;
+}
+
+footer {
+  padding:22px 20px; background:var(--gruen-dunkel); color:var(--beige);
+  text-align:center; font-size:.88rem;
+}
+
+@media (max-width:900px) {
+  .formate-grid,.pilot-status-grid,.pilot-modul-grid { grid-template-columns:1fr; }
+  .pilot-status-grid { gap:20px; }
+  .entwicklungsblock { margin-top:38px; }
+  .entwicklungsblock h3 { margin-bottom:22px; }
+  #didaktik > .container > h2,
+  #kreis > .container h2,
+  #saeulen > .container > h2,
+  #bildungsformate > .container > h2,
+  #plus18 > .container > h2,
+  #tourismus > .container > h2,
+  #fauna > .container > h2 { font-size:2.05rem; line-height:1.08; }
+}
+@media (max-width:620px) {
+  body { font-size:17px; line-height:1.5; }
+  .container { width:min(100% - 34px,1080px); }
+  section { padding:54px 0; }
+  h1 { font-size:3rem; }
+  h2 { margin-bottom:22px; font-size:2.05rem; }
+  h3 { font-size:1.44rem; }
+  .hero { padding:18px 0 54px; }
+  .hero-logo { width:198px; margin:16px auto -6px; }
+  .untertitel { margin-top:10px; font-size:1.06rem; }
+  .hero-titel {
+    min-height:calc(100svh - 36px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .leitgedanke { margin-top:56px; margin-bottom:0; font-size:1.98rem; line-height:1.1; }
+  .leitgedanke::before { margin-bottom:24px; }
+  .leitgedanke::after { margin-top:24px; }
+  .hero-fragen p { margin-bottom:9px; font-weight:700; }
+  .hero-textblock { margin-top:25px; }
+  .hero-textblock p { margin-bottom:8px; }
+  .hero-impuls { margin-top:24px; }
+  .magazin-zitat { margin:48px 0; padding-left:15px; font-size:.98rem; line-height:1.38; }
+  .hero .magazin-zitat { margin:48px 0; }
+  .kreis-zitat,.abschluss-zitat { margin-top:48px; margin-bottom:48px; }
+  .kreis-folge { margin:21px 0 27px; font-size:1rem; }
+  .kreis-grafik { margin-top:25px; }
+  .saeule { grid-template-columns:34px 1fr; gap:12px; padding:23px 0; }
+  .saeule-nummer { font-size:1.4rem; }
+  .saeule h3 { font-size:1.38rem; }
+  .saeulen-zitat { margin-top:14px; margin-bottom:28px; padding-top:24px; }
+  .saeulen-zitat::after { top:24px; height:calc(100% - 24px); }
+  .format { padding:24px 21px; }
+  .format h3 { margin-bottom:1px; font-size:1.56rem; }
+  .zielgruppe { margin-bottom:25px; font-size:.98rem; }
+  .status { margin-top:18px; padding-top:13px; font-size:.85rem; }
+  .tourismus-leitsatz,.fauna-leitsatz { font-size:1.28rem; }
+  .tourismus-frage { font-size:1.22rem; }
+  .pilot-modul { padding:35px 0; }
+  .bilder-zwei { grid-template-columns:1fr; }
+  .wasser-detailbild img { width:74%; margin:0 auto; }
+  .pilot-modul-grid { gap:28px; }
+  .pilot-text h3 { font-size:1.58rem; }
+  .pilot-text .zielgruppe { margin-bottom:26px; }
+  .kontakt-logo { width:190px; margin-bottom:8px; }
+  .kontakt-daten { margin-top:44px; }
+  .kontakt-zitat { margin-top:48px; }
+  .language-switch { top:12px; right:16px; font-size:.9rem; }
+  .scroll-nav { right:14px; bottom:22px; gap:8px; }
+  .scroll-nav button { width:48px; height:48px; font-size:1.3rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="start">
+  <div class="language-switch" aria-label="Language selection"><a href="index.html" lang="de">DE</a><span aria-hidden="true"> | </span><span class="active" aria-current="page">EN</span></div>
+  <div class="container"><div class="textbreite">
+    <div class="hero-titel">
+      <img class="hero-logo logo-freistellen" src="logo.png" alt="WerteWald symbol">
+      <h1><strong>WerteWald</strong></h1>
+      <div class="untertitel">Institute for Compassion &amp; Environmental Awareness</div>
+      <div class="leitgedanke"><span class="leitgedanke-zeile">Look. Discover.</span><span class="leitgedanke-zeile">Choose.</span></div>
+    </div>
+    <blockquote class="magazin-zitat">Nature is a fundamental point of reference for <strong>WerteWald</strong>. It is not only about experiencing nature, but also about the awareness of being part of a larger, living system.</blockquote>
+    <div class="hero-fragen">
+      <p>What changes when perception is not only the beginning of learning, but also a way of gaining access to oneself?</p>
+      <p>What if an insight changes the way we look at our own lives — and with it, the way we perceive connections?</p>
+      <p>Could our view be influenced by different “lenses”? Could experiences become filters that shape our perception — and perhaps sometimes distort it?</p>
+    </div>
+    <div class="hero-textblock">
+      <p>These and other questions are explored by <strong>WerteWald</strong> on different levels, encouraging renewed attention to oneself, to others and to the environment.</p>
+      <p>People are invited to ask questions, shift perspectives and consciously examine their own conclusions — with the aim of gaining orientation and acting with greater self-determination.</p>
+      <p>The aim is not to provide ready-made answers. <strong>WerteWald</strong> creates spaces in which people can discover for themselves what they perceive, what they understand, what resonates with them and what possibilities may emerge from this.</p>
+    </div>
+    <p class="hero-impuls"><strong>WerteWald</strong> offers impulses for more conscious perception and reflection with and within nature, and for discovering new perspectives — for oneself, in interaction with others and in respectful relationship with nature.</p>
+    <blockquote class="magazin-zitat">Observation can lead to insight. Insight can lead to relationship. Relationship can lead to connectedness. And where connectedness grows, responsibility and possibilities for action can become visible.</blockquote>
+  </div></div>
+</header>
+
+<main>
+<section class="didaktik" id="didaktik">
+  <div class="container"><div class="textbreite">
+    <h2>WerteWald Educational Approach</h2>
+    <p><strong>WerteWald</strong> is an educational approach centred on perception, inquiry and perspective-taking. Wherever possible, it begins with concrete experiences and observations.</p>
+    <p>These are connected with reflection and subject knowledge, making different perspectives and wider connections visible while creating space for people to develop their own sense of orientation and recognise the options available to them.</p>
+    <p>Questions are not used simply to lead towards predetermined answers. Openness, not knowing and different well-founded conclusions are allowed to remain part of the learning process.</p>
+  </div></div>
+</section>
+
+<section class="kreis-bereich" id="kreis"><div class="container">
+  <div class="kreis-einstieg">
+    <h2>The WerteWald Circle</h2>
+    <p>The <strong>WerteWald Circle</strong> shows how conscious perception can set a process of development in motion.</p>
+    <div class="kreis-folge">
+      <div>Perception</div><div>→ Insight</div><div>↔ Relationship</div><div>↔ Connectedness</div>
+      <div>→ Responsibility</div><div>→ Possibilities for Action</div><div>→ Sharing / Protecting</div>
+    </div>
+  </div>
+  <img class="kreis-grafik" src="wertewald-kreis-en.png" alt="Circular diagram with seven connected stages: Perception, Insight, Relationship, Connectedness, Responsibility, Possibilities for Action and Sharing / Protecting.">
+  <blockquote class="magazin-zitat kreis-zitat">What matters is the movement: Perception can open up orientation, and orientation can open up room for action.</blockquote>
+  <div class="kreis-erklaerung">
+    <div class="kreis-zusammen">
+      <p>This dynamic process can support people in dealing more consciously with change, uncertainty and different perspectives, in recognising their own possibilities and in shaping their lives with greater self-determination.</p>
+      <p>It can strengthen self-efficacy, encourage conscious action and support the ability to find orientation in complex situations. Consciously engaging with one’s own reactions, needs and possibilities for action can also help people deal more resiliently with change and strain.</p>
+    </div>
+    <p class="kreis-perspektivwechsel">Through shifts in perspective, conscious communication and collective action, social skills and the capacity for relationships can continue to develop — in relation to oneself, to other people and to the environment.</p>
+  </div>
+</div></section>
+
+<section id="saeulen"><div class="container">
+  <h2>The Seven Pillars of WerteWald</h2>
+  <div class="saeulen-liste">
+    <article class="saeule"><div class="saeule-nummer">1</div><div><h3>Mindfulness</h3><p>For <strong>WerteWald</strong>, mindfulness means consciously paying attention to the present moment — to oneself, to other people and to the environment.</p><p>It begins with the senses, but goes beyond them. Thoughts, feelings, reactions and impressions from the world around us are noticed without immediately interpreting or judging them.</p></div></article>
+    <article class="saeule"><div class="saeule-nummer">2</div><div><h3>Perception &amp; Reflection</h3><p><strong>WerteWald</strong> begins with conscious perception. Observations, personal reactions and experiences are consciously considered and reflected upon. A distinction is made between observation, knowledge, assumption and personal interpretation.</p></div></article>
+    <article class="saeule"><div class="saeule-nummer">3</div><div><h3>Nature &amp; Science</h3><p>Nature is not only a place of learning within <strong>WerteWald</strong>, but also a starting point for questions, insights and development. Scientific background can help place observations in context and provide orientation, without fully replacing personal experiences or open questions.</p></div></article>
+    <article class="saeule"><div class="saeule-nummer">4</div><div><h3>Appreciation</h3><p>For <strong>WerteWald</strong>, appreciation begins when something is experienced not simply as existing, but as valuable. It combines respect with gratitude and an awareness that what is valuable should not be taken for granted. From this can grow a desire to treat it with care, to preserve it and to protect it.</p></div></article>
+    <blockquote class="magazin-zitat saeulen-zitat">Connectedness and appreciation influence one another. Experiencing connectedness can deepen the recognition of value. And when something is truly appreciated, the way we relate to it changes.</blockquote>
+    <article class="saeule"><div class="saeule-nummer">5</div><div><h3>Connectedness, Relationship &amp; Compassion</h3><p>For <strong>WerteWald</strong>, connectedness means experiencing oneself not as isolated, but as part of a larger context.</p><p>Relationship and connectedness interact with one another. Insights can open up a more conscious relationship with oneself, with other people and with nature. At the same time, the experience of connectedness can make relationships more visible, more conscious and more deeply felt.</p><p>Where people experience themselves as part of a larger context, compassion can grow, along with an awareness that their own actions have an impact.</p></div></article>
+    <article class="saeule"><div class="saeule-nummer">6</div><div><h3>Perspective Shift &amp; Orientation</h3><p>Different perspectives can exist side by side. <strong>WerteWald</strong> invites people to shift perspectives, to tolerate uncertainty and to examine their own point of view where it makes sense in the given situation. Orientation does not come from ready-made answers, but from consciously placing things in context and seeking to understand them.</p></div></article>
+    <article class="saeule"><div class="saeule-nummer">7</div><div><h3>Freedom of Choice</h3><p><strong>WerteWald</strong> aims to strengthen people in recognising their own possibilities, making conscious decisions and becoming aware of their room for action.</p><p>Individual freedom of choice remains a central point of reference. <strong>WerteWald</strong> assumes that this freedom is fundamentally present, but that it can be obscured by experiences, expectations, judgements or external circumstances and may at times be barely noticeable.</p></div></article>
+  </div>
+</div></section>
+
+<section class="bildungsformate" id="bildungsformate"><div class="container">
+  <h2>Educational Formats</h2>
+  <div class="abschnitt-einleitung">
+    <p>Nature is a fundamental point of reference for <strong>WerteWald</strong>. Depending on the format, it can serve as a space for direct experience, a learning partner, a living presence or a connecting element for different topics and questions.</p>
+    <p>The individual formats address different age groups, stages of life, topics and approaches, and are designed to suit the respective target group, situation and learning environment.</p>
+    <p>In this way, a connected and dynamic educational system emerges, linking different age groups, stages of life and approaches.</p>
+  </div>
+
+  <div class="formate-grid">
+    <article class="format">
+      <h3>WerteWald Roots</h3>
+      <div class="zielgruppe">For children aged approximately 6–10.</div>
+      <p><strong>WerteWald Roots</strong> invites children to experience nature directly, observe for themselves, ask questions and make their own discoveries.</p>
+      <p>Nature is understood not only as a place of learning, but as a learning partner. Movement, sensory experiences, exploration, shared experiences and reflection work together.</p>
+      <p>Children are encouraged to discover things for themselves wherever possible before answers are provided. Community comes before competition, diversity is a natural part of learning together, and connectedness with nature creates space for appreciation, compassion and environmental awareness.</p>
+      <p class="status">Status: Practically tested in 2026 — further modules in development.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Plus</h3>
+      <div class="zielgruppe">For older children and young people aged approximately 10–18.</div>
+      <p><strong>WerteWald Plus</strong> accompanies young people through a stage of life shaped by physical changes, growing independence, new social experiences and an increasing engagement with themselves and society.</p>
+      <p>The focus is on personal skills, self-reflection and orientation. Young people are invited to become more aware of their bodies, emotions, thinking, relationships and social influences, and to place them in context.</p>
+      <p>Nature serves as a shared language and a source of orientation. Metaphors from nature can help make complex topics easier to understand, reveal connections and support the development of personal insights.</p>
+      <p class="status">Status: Format and module development in progress.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Maps</h3>
+      <div class="zielgruppe">For parents and other caregivers.</div>
+      <p><strong>WerteWald Maps</strong> offers orientation for adults who accompany children and young people.</p>
+      <p>The format invites them to look at situations from different perspectives and to become more aware of their own role in their interactions with others.</p>
+      <p>Behaviour, needs, challenges and possible connections are not judged too quickly, but considered in a differentiated way. Shifts in perspective and reflection can help people place situations in context and discover new possibilities in how they relate to one another.</p>
+      <p class="status">Status: Format and module development in progress.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Communication</h3>
+      <div class="zielgruppe">For young people and adults.</div>
+      <p><strong>WerteWald Communication</strong> focuses on language and its impact.</p>
+      <p>At its heart is the question of how communication influences perception, relationships and mutual understanding — and, conversely, how experiences, expectations, judgements and personal patterns of interpretation shape our inner dialogue and our communication with others.</p>
+      <p><strong>WerteWald</strong> aims to strengthen people in using language more consciously — in conversations with others as well as in the way they communicate with themselves.</p>
+      <p class="status">Status: Format and module development in progress.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Collective</h3>
+      <div class="zielgruppe">For young people and adults.</div>
+      <p><strong>WerteWald Collective</strong> looks at what shapes us long before we consciously think about it: social ideas, cultural patterns, role models, judgements and expectations.</p>
+      <p>But how much of this actually belongs to one’s own personality? How much individuality flows into our behaviour and everyday decisions — and how much follows patterns we have adopted without consciously choosing them?</p>
+      <p>These and other questions are explored in <strong>WerteWald Collective</strong> from different perspectives.</p>
+      <p class="status">Status: Format and module development in progress.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Sense</h3>
+      <div class="zielgruppe">For adults, families and groups.</div>
+      <p><strong>WerteWald Sense</strong> is a body-oriented format that uses the available senses and ways of perceiving to bring people more strongly back into direct experience and into awareness of their own body.</p>
+      <p>The aim is not to assume the presence of particular senses, but to consciously use the ways of perceiving that are available to each individual.</p>
+      <p>In this way, <strong>WerteWald Sense</strong> aims to strengthen self-perception and support people in experiencing their bodies more consciously as a source of information and orientation.</p>
+      <p class="status">Status: Conceptual idea.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Ventures</h3>
+      <div class="zielgruppe">For young people and adults.</div>
+      <p>Not everyone discovers in the same way – and a Venture isn’t something you simply consume; it takes shape.</p>
+      <p>In a real place. With what is actually there. And depending on who is there, what catches their attention and how they choose to engage, something entirely different can emerge.</p>
+      <p>The researcher reaches for the measuring equipment.<br>The adventurer follows a trail.<br>Someone else tastes their way through the region.</p>
+      <p>Curious?</p>
+      <p class="status">Status: Format and module development in progress.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Pulse &amp; Move</h3>
+      <div class="zielgruppe">For young people and adults.</div>
+      <p><strong>WerteWald Pulse &amp; Move</strong> combines movement in nature with body awareness, rhythm, sound and supportive verbal prompts.</p>
+      <p>Conscious movement, direct contact with natural ground and different acoustic stimuli create a space for direct experience in which people can feel their bodies more intensely, discover them in new ways and develop enjoyment of movement.</p>
+      <p>The focus is on appreciation for one’s own body — not as something to be taken for granted, but as a living and multifaceted system.</p>
+      <p class="status">Status: Conceptual idea.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Digitals</h3>
+      <div class="zielgruppe">For young people and adults.</div>
+      <p><strong>WerteWald Digitals</strong> focuses on orientation within digital information environments.</p>
+      <p><strong>WerteWald</strong> aims to strengthen people in placing information in context, examining sources and forms of presentation, and becoming more aware of how language, images, selection, technical systems and the way content is framed and presented can influence perception.</p>
+      <p class="status">Status: Conceptual idea.</p>
+    </article>
+
+    <article class="format">
+      <h3>WerteWald Seniors</h3>
+      <div class="zielgruppe">For older people.</div>
+      <p>A conceptual educational approach aimed at strengthening independence, digital participation and orientation in dealing with technological change.</p>
+      <p>The aim is to support older people in understanding digital requirements more clearly and managing them as independently as possible.</p>
+      <p class="status">Status: Conceptual idea.</p>
+    </article>
+  </div>
+</div></section>
+
+<section class="plus18" id="plus18"><div class="container">
+  <h2>WerteWald 18+</h2>
+  <div class="abschnitt-einleitung">
+    <p>Not all topics belong in formats for children or families.</p>
+    <p><strong>WerteWald 18+</strong> creates space for content aimed specifically at adults and addresses social, personal and interpersonal topics that are direct, uncomfortable or sensitive.</p>
+    <p>It openly explores questions around boundaries, self-determination, agency, power, manipulation, sexualisation and other forms of influence and boundary-crossing behaviour.</p>
+  </div>
+  <div class="formate-grid">
+    <article class="format">
+      <h3>WerteWald Puppets</h3>
+      <div class="zielgruppe">For adults.</div>
+      <p><strong>WerteWald Puppets</strong> focuses on situations in which personal agency is restricted, undermined or threatened.</p>
+      <p>The focus is on manipulative behaviour, boundary violations, dynamics of power and dependency, and the ways in which perception, decisions and freedom of action can be influenced.</p>
+      <p>The format explores how such processes can be recognised, what effects they may have, and what possibilities exist for preserving or regaining personal agency.</p>
+      <p class="status">Status: Conceptual idea.</p>
+    </article>
+  </div>
+</div></section>
+
+<section class="tourismus" id="tourismus"><div class="container">
+  <h2>WerteWald Abroad</h2>
+  <p class="tourismus-leitsatz">You are here on holiday. But someone else lives here.</p>
+  <div class="textbreite">
+    <p>Tourism brings together visitors, places, nature and people. What means relaxation and freedom to some is, for others, the place where they live, work and go about their everyday lives.</p>
+    <p><strong>WerteWald Abroad</strong> focuses on this relationship and on the traces a stay can leave behind.</p>
+    <p>It looks at nature and resources, local structures, quality of life, encounters between visitors and local people, and the many small decisions whose effects often only become visible when considered together.</p>
+    <p class="tourismus-frage">What do you receive from this place – and what do you give back to it?</p>
+    <p><strong>WerteWald</strong> develops practical and interactive approaches that invite people to observe, explore and see things from different perspectives.</p>
+    <p>Visitors are not simply encouraged to follow rules, but to understand the wider connections and decide for themselves how they want to engage with a place, its people and its natural environment.</p>
+    <p class="status">Status: Conceptual development in progress.</p>
+  </div>
+</div></section>
+
+<section class="fauna" id="fauna"><div class="container">
+  <h2>WerteWald Fauna</h2>
+  <p class="fauna-leitsatz">Notice animals. Question relationships. Discover responsibility.</p>
+  <div class="textbreite">
+    <p><strong>WerteWald Fauna</strong> invites us to see animals as living beings in their own right – with their own abilities, needs, perceptions, relationships and ways of life.</p>
+    <p>How do we encounter other living beings? What role do we give ourselves? Where do we protect – and where do we control, use or restrict?</p>
+    <p>The question is not only what we know about animals, but also: “What might we not know?” And: “What responsibility arises from the fact that humans can make decisions about the lives of other living beings?”</p>
+    <p><strong>WerteWald Fauna</strong> is based on the understanding that animals are valuable.</p>
+    <p class="status">Status: Conceptual development in progress.</p>
+  </div>
+</div></section>
+
+<section id="pilotphase"><div class="container"><div class="textbreite">
+  <h2>Pilot Phase &amp; Development</h2>
+  <div class="entwicklungsblock">
+    <h3>Where does WerteWald stand today?</h3>
+    <p><strong>WerteWald</strong> was established in March 2026 and has been in its development and pilot phase ever since.</p>
+    <p>With <strong>WerteWald Roots</strong>, the first modules were tested in practice with groups of children in August 2026 and systematically evaluated.</p>
+    <p>The experience gained through this practical testing continues to inform the further development of the format and the broader educational system.</p>
+  </div>
+  <div class="entwicklungsblock">
+    <h3>What are the next steps in development?</h3>
+    <p>In the next phase of development, <strong>WerteWald Roots</strong> will continue to be tested in practice and further developed for more regular use in practice. Options for regular implementation are currently being explored.</p>
+    <p>Building on the experience gained with <strong>WerteWald Roots</strong>, <strong>WerteWald Maps</strong> is being further developed as a complementary format for parents and other caregivers.</p>
+    <p>At the same time, the format and module development of <strong>WerteWald Communication</strong> is continuing. Suitable target groups, learning environments and ways of testing the format in practice in the future will be defined more precisely as the development process progresses.</p>
+  </div>
+  <div class="entwicklungsblock">
+    <h3>How are the formats developed?</h3>
+    <p>The educational formats of <strong>WerteWald</strong> are developed step by step: from conception through practical testing and evaluation to further development and reapplication in practice.</p>
+    <p>Throughout this process, content, methods, conditions and practical framework are continuously considered in relation to how well they fit the respective target group, learning environment and nature of the format.</p>
+  </div>
+  <div class="entwicklungsblock">
+    <h3>What future directions are emerging?</h3>
+    <p>For <strong>WerteWald Roots</strong>, possibilities for more regular practical implementation and further collaboration are currently being explored together with a local municipality.</p>
+    <p>At the same time, the educational system is gradually being expanded to include additional formats. The initial focus is on development steps that build meaningfully on existing experience and target groups.</p>
+    <p>In the long term, the different <strong>WerteWald</strong> formats are intended to function independently while remaining connected — as different approaches to perception, relationship, orientation and shaping one’s life with greater self-determination.</p>
+  </div>
+</div></div></section>
+
+<section class="pilotmodule"><div class="container">
+  <h2>Pilot Modules 2026</h2>
+  <article class="pilot-modul"><div class="pilot-modul-grid">
+    <div class="bilder-zwei">
+      <figure class="wasser-hauptbild"><img src="wasserforscher-materialien.jpg" alt="Research materials from the WerteWald Roots Water Researchers module with Detective Shadowpaw"><figcaption>Water Researchers – research materials and Detective Shadowpaw</figcaption></figure>
+      <figure class="wasser-detailbild"><img src="wasserforscher-pfotenkarten-neu.jpg" alt="Children working together with paw cards during the WerteWald Roots Water Researchers module"><figcaption>Water Researchers – working with the paw cards</figcaption></figure>
+    </div>
+    <div class="pilot-text">
+      <h3>Water Researchers –<br>Every Drop Counts</h3>
+      <div class="zielgruppe">For children aged 6–10.</div>
+      <p><strong>Water Researchers – Every Drop Counts</strong> was delivered as a three-hour module as part of a municipality’s holiday programme.</p>
+      <p>The children explored why people, animals and plants need water and how everything is interconnected. Working in small research teams, they investigated different water-related clues, made observations at the biotope and deepened their understanding through hands-on activities — including building an insect drinking station.</p>
+    </div>
+  </div></article>
+  <article class="pilot-modul"><div class="pilot-modul-grid">
+    <figure class="naturhueter-bild"><img src="naturhueter.jpg" alt="Children observing together in a natural environment during the WerteWald Roots Nature Guardians module"><figcaption>Nature Guardians – observing together in a natural environment</figcaption></figure>
+    <div class="pilot-text">
+      <h3>Nature Guardians –<br>Play, Fun &amp; Responsibility</h3>
+      <div class="zielgruppe">For children aged 6–10.</div>
+      <p><strong>Nature Guardians – Play, Fun &amp; Responsibility</strong> was delivered as a three-hour module as part of a municipality’s holiday programme.</p>
+      <p>The children investigated traces of human impact on nature and explored potential dangers to animals and habitats. Through search, sorting and rescue activities, responsibility was not only discussed, but made tangible through practical experience.</p>
+    </div>
+  </div></article>
+</div></section>
+
+<section id="kooperation"><div class="container"><div class="kooperation-text">
+  <h2>Cooperation</h2>
+  <p><strong>WerteWald</strong> is open to cooperation with municipalities, educational institutions, nature and environmental stakeholders, as well as other partners whose fields of work and objectives align with the project’s core ideas.</p>
+  <p><strong>WerteWald</strong> sees openness as a strength. The shared framework should provide enough orientation without unnecessarily limiting creative possibilities.</p>
+  <p>Collaboration may also open up new paths. Ideas, impulses and unconventional approaches are welcome when they contribute meaningfully to the further development of <strong>WerteWald</strong>.</p>
+  <p>Cooperation should develop wherever there is a suitable setting for <strong>WerteWald</strong> and a viable basis for working together.</p>
+</div></div></section>
+
+<section class="hinter-wertewald" id="hinter-wertewald"><div class="container"><div class="textbreite">
+  <h2>Behind WerteWald</h2>
+  <p><strong>WerteWald</strong> was developed by Andrea Marija Zivkovic.</p>
+  <p>Personal experiences, motherhood, a strong connection to nature, and many years of engagement with perception, communication, social influences and acting with greater self-determination shape the development of the project.</p>
+  <p>This is complemented by training in business and the natural sciences, leadership experience, analytical work in laboratory settings and diagnostics, as well as entrepreneurial experience.</p>
+  <p>Further professional training in nature and environmental education, methodology and didactics, inclusion, as well as prevention and resilience education, is part of this ongoing development.</p>
+  <p><strong>WerteWald</strong> understands development as an ongoing process. Continuing to learn, reflect, take in new insights and keep evolving are therefore a natural part of it.</p>
+  <blockquote class="magazin-zitat abschluss-zitat">Further development means keeping moving — like a forest that changes, grows and yet retains its essence.</blockquote>
+</div></div></section>
+
+<section id="kontakt"><div class="container"><div class="kontakt-grid">
+  <img class="kontakt-logo logo-freistellen" src="logo.png" alt="WerteWald symbol">
+  <h2>Contact</h2>
+  <p class="textbreite">Would you like to learn more about <strong>WerteWald</strong>, discuss a possible cooperation, or follow the project’s further development?</p>
+  <div class="kontakt-daten"><strong>Andrea Marija Zivkovic</strong><br>Althengstett, Stuttgart Region<br><a href="mailto:wertewald.institut@gmail.com">wertewald.institut@gmail.com</a></div>
+  <blockquote class="magazin-zitat kontakt-zitat">Living systems need more than function. They need perception, relationship and respect.<span class="kontakt-zitat-schluss"><strong>WerteWald</strong> aims to open our eyes to this.</span></blockquote>
+</div></div></section>
+</main>
+
+<div class="scroll-nav" aria-label="Page navigation">
+  <button type="button" data-scroll="up" aria-label="Previous section">↑</button>
+  <button type="button" data-scroll="down" aria-label="Next section">↓</button>
+</div>
+
+<footer><strong>WerteWald</strong> · <em>Institute for Compassion &amp; Environmental Awareness</em> · <span style="white-space:nowrap;">Project Presence 2026, as of 09/2026</span></footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"787c98a41f574cdf8247af251c75400f"}'></script>
+
+<script>
+(() => {
+  const sections = [document.querySelector('#start'), ...document.querySelectorAll('main > section')].filter(Boolean);
+  const up = document.querySelector('[data-scroll="up"]');
+  const down = document.querySelector('[data-scroll="down"]');
+
+  function currentIndex() {
+    const y = window.scrollY + Math.min(window.innerHeight * 0.3, 220);
+    let idx = 0;
+    sections.forEach((section, i) => {
+      if (section.offsetTop <= y) idx = i;
+    });
+    return idx;
+  }
+
+  up.addEventListener('click', () => {
+    const idx = currentIndex();
+    if (idx <= 0) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      sections[idx - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  down.addEventListener('click', () => {
+    const idx = currentIndex();
+    if (idx >= sections.length - 1) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      sections[idx + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
